@@ -1,3 +1,4 @@
+---
 name: globalcitizen-django
 version: 0.0.1
 inherits: wercker/python
