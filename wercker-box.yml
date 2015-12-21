@@ -1,0 +1,21 @@
+name: globalcitizen-django
+version: 0.0.1
+inherits: wercker/python
+type: service
+platform: ubuntu@12.04
+description: Wercker box for Global Citizen. Django, Redis, Node, Phantom 2.
+keywords:
+  - django
+  - python
+  - redis
+  - node
+  - phantom2
+script: |
+  
+  sudo add-apt-repository -y ppa:chris-lea/redis-server
+  sudo apt-get update -y
+  sudo apt-get install redis-server
+  sudo apt-get install binutils libproj-dev gdal-bin libgeoip1 libgeoip-dev geoip-bin 
+  sudo apt-get install nodejs
+  curl -s https://packagecloud.io/install/repositories/armando/phantomjs/script.deb.sh | sudo bash
+  sudo apt-get install phantomjs=2.0.0
